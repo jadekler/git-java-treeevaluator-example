@@ -15,4 +15,13 @@ Possible Grades (ex. A+, B, C-, Pass, Fail)
 
 ## Data setup
 
+> S = School
+
+> U = Subject
+
+> L = Level
+
+> G = Grade
+
+
 ![](data_setup.png)
