@@ -12,3 +12,7 @@ Levels Offered (ex. Regular, Honors, AP)
 | 0..*
 Possible Grades (ex. A+, B, C-, Pass, Fail)
 ```
+
+## Data setup
+
+![](data_setup.png)
