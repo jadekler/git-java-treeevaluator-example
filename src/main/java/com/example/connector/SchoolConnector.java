@@ -1,11 +1,13 @@
-package com.example.connectors;
+package com.example.connector;
 
 import com.example.model.School;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
+@Component
 public class SchoolConnector {
     public List<School> findAll() {
         return asList(

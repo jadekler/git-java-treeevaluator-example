@@ -1,11 +1,13 @@
-package com.example.connectors;
+package com.example.connector;
 
 import com.example.model.Level;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
+@Component
 public class LevelConnector {
     public List<Level> findAll() {
         return asList(

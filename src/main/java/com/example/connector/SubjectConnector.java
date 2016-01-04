@@ -1,11 +1,13 @@
-package com.example.connectors;
+package com.example.connector;
 
 import com.example.model.Subject;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
+@Component
 public class SubjectConnector {
     public List<Subject> findAll() {
         return asList(
