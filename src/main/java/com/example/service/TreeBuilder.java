@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 import static com.example.model.LogicalOperator.AND;
-import static com.example.model.LogicalOperator.OR;
 import static java.util.stream.Collectors.toList;
 
 @Service
@@ -38,7 +37,7 @@ public class TreeBuilder {
                     })
                     .collect(toList());
 
-                return new TreeNode<>(subject.getId(), subjectChildren, Optional.of(OR));
+                return new TreeNode<>(subject.getId(), subjectChildren, Optional.of(AND));
             })
             .collect(toList());
 

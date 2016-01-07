@@ -13,6 +13,7 @@ public class TreeNode<T> {
     public TreeNode(String description, List<TreeNode<T>> children, Optional<LogicalOperator> logicalOperator) {
         this.description = description;
         this.children = children;
+        this.logicalOperator = logicalOperator;
     }
 
     public TreeNode(String description, Optional<T> criteria) {
