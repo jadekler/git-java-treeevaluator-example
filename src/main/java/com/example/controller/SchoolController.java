@@ -19,11 +19,11 @@ public class SchoolController {
     @Autowired private GradeConnector gradeConnector;
 
     @Autowired private TreeBuilder treeBuilder;
-    @Autowired private TreeEvaluator treeEvaluator;
+    @Autowired private TreeEvaluator<Grade> treeEvaluator;
 
     @RequestMapping("/schools")
     public List<School> getSchoolsWithGrades(@RequestParam String commaSeparatedGrades) {
-        List<String> grades = asList(commaSeparatedGrades.split(","));
+        List<String> wantedGrades = asList(commaSeparatedGrades.split(","));
 
         final List<School> allSchools = schoolConnector.findAll();
         final List<Subject> allSubjects = subjectConnector.findAll();
@@ -33,7 +33,7 @@ public class SchoolController {
         return allSchools.stream()
             .filter(school -> {
                 TreeNode root = treeBuilder.build(school, allSubjects, allLevels, allGrades);
-                return treeEvaluator.isValid(root);
+                return treeEvaluator.isValid(root, wantedGrades::contains);
             })
             .collect(toList());
     }

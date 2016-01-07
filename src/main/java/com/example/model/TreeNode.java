@@ -28,6 +28,10 @@ public class TreeNode<T> {
         return children;
     }
 
+    public Optional<LogicalOperator> getLogicalOperator() {
+        return logicalOperator;
+    }
+
     public Optional<T> getCriteria() {
         return criteria;
     }
@@ -37,6 +41,7 @@ public class TreeNode<T> {
         return "TreeNode{" +
             "description='" + description + '\'' +
             ", children=" + children +
+            ", logicalOperator=" + logicalOperator +
             ", criteria=" + criteria +
             '}';
     }
@@ -54,6 +59,8 @@ public class TreeNode<T> {
             return false;
         if (children != null ? !children.equals(treeNode.children) : treeNode.children != null)
             return false;
+        if (logicalOperator != null ? !logicalOperator.equals(treeNode.logicalOperator) : treeNode.logicalOperator != null)
+            return false;
         return criteria != null ? criteria.equals(treeNode.criteria) : treeNode.criteria == null;
 
     }
@@ -62,6 +69,7 @@ public class TreeNode<T> {
     public int hashCode() {
         int result = description != null ? description.hashCode() : 0;
         result = 31 * result + (children != null ? children.hashCode() : 0);
+        result = 31 * result + (logicalOperator != null ? logicalOperator.hashCode() : 0);
         result = 31 * result + (criteria != null ? criteria.hashCode() : 0);
         return result;
     }
