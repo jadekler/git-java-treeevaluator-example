@@ -1,5 +1,5 @@
 # git-java-treeevaluator-example
-Example of a tree evaluator.
+[![Build Status](https://travis-ci.org/jadekler/git-java-treeevaluator-example.svg?branch=master)](https://travis-ci.org/jadekler/git-java-websiteskeleton) Example of a tree evaluator.
 
 ## Model
 
