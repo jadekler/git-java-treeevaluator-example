@@ -21,11 +21,11 @@ public class AcceptanceTest {
 	public void algorithm() {
         get("http://127.0.0.1:" + port + "/schools?commaSeparatedGrades=Pass")
             .then().assertThat().body("size()", equalTo(1))
-            .assertThat().body("get(0).id", equalTo("school id 1"));
+            .assertThat().body("get(0).id", equalTo("school id 4"));
 
         get("http://127.0.0.1:" + port + "/schools?commaSeparatedGrades=Pass,Fail")
             .then().assertThat().body("size()", equalTo(2))
-            .assertThat().body("get(0).id", equalTo("school id 1"))
-            .assertThat().body("get(1).id", equalTo("school id 2"));
+            .assertThat().body("get(0).id", equalTo("school id 3"))
+            .assertThat().body("get(1).id", equalTo("school id 4"));
 	}
 }

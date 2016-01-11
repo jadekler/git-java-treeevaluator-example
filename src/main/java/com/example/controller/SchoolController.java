@@ -33,7 +33,7 @@ public class SchoolController {
         return allSchools.stream()
             .filter(school -> {
                 TreeNode<Grade> root = treeBuilder.build(school, allSubjects, allLevels, allGrades);
-                return treeEvaluator.isValid(root, wantedGrades::contains);
+                return treeEvaluator.isValid(root, grade -> wantedGrades.contains(grade.getName()));
             })
             .collect(toList());
     }
