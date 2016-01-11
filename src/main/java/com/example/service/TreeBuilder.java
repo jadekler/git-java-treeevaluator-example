@@ -19,17 +19,17 @@ public class TreeBuilder {
         List<String> subjectIds = school.getSubjectIds();
 
         List<TreeNode<Grade>> schoolChildren = allSubjects.stream()
-            .filter(subjectIds::contains)
+            .filter(subject -> subjectIds.contains(subject.getId()))
             .map(subject -> {
                 List<String> levelIds = subject.getLevelIds();
 
                 List<TreeNode<Grade>> subjectChildren = allLevels.stream()
-                    .filter(levelIds::contains)
+                    .filter(level -> levelIds.contains(level.getId()))
                     .map(level -> {
                         List<String> gradeIds = level.getGradeIds();
 
                         List<TreeNode<Grade>> levelChildren = allGrades.stream()
-                            .filter(gradeIds::contains)
+                            .filter(grade -> gradeIds.contains(grade.getId()))
                             .map(grade -> new TreeNode<>(grade.getId(), Optional.of(grade)))
                             .collect(toList());
 
